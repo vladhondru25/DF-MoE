@@ -3,8 +3,8 @@
 Download the repo:
 ```
 git lfs install
-GIT_LFS_SKIP_SMUDGE=0 git clone git@github.com:vladhondru25/BiodeepDetection.git
-cd BiodeepDetection
+GIT_LFS_SKIP_SMUDGE=0 git clone git@github.com:vladhondru25/DF-MoE.git
+cd DF-MoE
 git checkout release
 ```
 
