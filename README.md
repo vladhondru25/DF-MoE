@@ -1,5 +1,38 @@
-# DF-MoE
+# DF-MoE: Generalizable Deepfake Detection via Multimodal Sparse Mixture-of-Experts
 
+Accepted at The British Machine Vision Conference (BMVC) 2026.
+
+![Pipeline figure](assets/figure.png)
+
+## Abstract
+Audio-visual deepfake detection is an actively studied topic, where one of the main
+challenges is to develop detectors able to generalize across deepfake generation methods. We conjecture that overfitting can be mitigated by extracting multiple high-level
+cues from the available audio and visual modalities via pre-trained models. We therefore assemble a wide variety of pre-trained models to extract features that encode mouth
+movements, face parsing, facial expressions, head pose, gaze tracking, heart rate, audio
+emotion and speech activity. We further integrate both unimodal and multimodal cues
+via a Mixture-of-Experts (MoE) backbone to detect deepfakes. We perform in-domain
+and cross-domain experiments on five benchmarks for deepfake detection (MAVOS-DD,
+AVLips, PolyGlotFake, BioDeepAV, FakeAVCeleb) to compare our framework (DFMoE) with state-of-the-art methods. Our results indicate that DF-MoE obtains superior
+deepfake detection results, surpassing all competing methods
+
+## Citation
+If you have used our work, please cite our paper.
+
+>Vlad Hondru, Florinel Alin Croitoru, Iuliana Georgescu, A. Sophia Koepke, Radu Tudor Ionescu  (2026, November). DF-MoE: Generalizable Deepfake Detection via Multimodal Sparse Mixture-of-Experts. In 2026 The British Machine Vision Conference (BMVC)
+
+Bibtex:
+```bibtex
+@inproceedings{hondru-BMVC-2026,
+  title={DF-MoE: Generalizable Deepfake Detection via Multimodal Sparse Mixture-of-Experts},
+  author={Vlad Hondru, Florinel Alin Croitoru, Iuliana Georgescu, A. Sophia Koepke, Radu Tudor Ionescu},
+  booktitle={2026 The British Machine Vision Conference (BMVC)},
+  year={2026},
+  organization={IEEE}
+}
+```
+
+
+## Instructions
 Download the repo:
 ```
 git lfs install
