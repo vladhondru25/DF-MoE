@@ -1,4 +1,4 @@
-# Biodeep
+# DF-MoE
 
 Download the repo:
 ```
