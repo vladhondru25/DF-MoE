@@ -26,8 +26,7 @@ Bibtex:
   title={DF-MoE: Generalizable Deepfake Detection via Multimodal Sparse Mixture-of-Experts},
   author={Vlad Hondru, Florinel Alin Croitoru, Iuliana Georgescu, A. Sophia Koepke, Radu Tudor Ionescu},
   booktitle={2026 The British Machine Vision Conference (BMVC)},
-  year={2026},
-  organization={IEEE}
+  year={2026}
 }
 ```
 
@@ -200,6 +199,10 @@ Then aggregate the prediction shards into accuracy/mAP/AUC stats and a confusion
   `python stats/compute_stats_not_mavos.py --predictions_paths predictions/my_run0,predictions/my_run1 --split_name "My Eval Set"`
 
 Both scripts take `--predictions_paths` as a comma-separated list of the rank shards to concatenate (from `test_scripts/test_moe.py`, or any other compatible predictions dataset), and save the confusion matrix PNG under `--output_dir` (default `confusion_matrices/{wandb_name}/`).
+
+## License
+
+This repository is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/) license (CC BY-NC-ND 4.0). See [LICENSE](LICENSE) for the full terms.
 
 
 
