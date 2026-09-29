@@ -5,7 +5,7 @@ def align_audio_to_frames_by_fps(
     audio_feats,         
     frame_indices,          
     fps,                 
-    hop_ms=10.0,         
+    hop_ms=20.0,         
     t0_video=0.0,        
     t0_audio=0.0,        
     method="nearest",    

@@ -50,37 +50,19 @@ pip install -r requirements.txt
 
 
 ```
-### Hugginface login
-We need to download some weights from hugginface, for this you can use the following login:
-```
-hf auth login --token HF_TOKEN
-```
+### Model weights:
+All checkpoints are available at: https://huggingface.co/acroitoru/DF-MoE/
+
+Paper experiments: best_moe_multiple_datasets_cro_loss.pt
+Social media experiments: The remaining checkpoints at the link above come from additional experiments on social media videos. These were completed after the submission deadline and fall outside the scope of the paper, so they are not reported in the article. We recommend them for social media deepfake detection, though this setting proved more challenging than the academic benchmarks.
 ## How to run detection on single video
 `python inference_scripts/inference_video.py --video_path path/to/video.mp4 --checkpoint_path path/to/checkpoint`
 
-The command automatically determines the analysis signal type based on the checkpoint filename (see `model/model_factory.py`). For optimal results, we recommend using the Mixture of Experts (MoE) model, which integrates all available signals to reach a final decision. You can run this model using a command similar to the following:
+We recommend using the Mixture of Experts (MoE) model, which integrates all available signals to reach a final decision. You can run this model using a command similar to the following:
 
-`python inference_scripts/inference_video.py --video_path assets/fake/morgan_freeman_fixed.mp4 --checkpoint_path model_checkpoints/last_moe_trained_with_social_media_videos.pt`
+`python inference_scripts/inference_video.py --video_path assets/fake/morgan_freeman_fixed.mp4 --checkpoint_path <checkpoint_path>`
 
-Head pose analysis:
 
-`python inference_scripts/inference_video.py --video_path assets/fake/2SaSnpFB4Js_0_1--oeyLwy8sJhA_2_1.mp4 --checkpoint_path model_checkpoints/best_hp_gaze_enc.pt`
-
-Emotion analysis:
-
-`python inference_scripts/inference_video.py --video_path assets/fake/2SaSnpFB4Js_0_1--oeyLwy8sJhA_2_1.mp4 --checkpoint_path model_checkpoints/best_emotion_enc.pt`
-
-Face segmentation analysis:
-
-`python inference_scripts/inference_video.py --video_path assets/fake/2SaSnpFB4Js_0_1--oeyLwy8sJhA_2_1.mp4 --checkpoint_path model_checkpoints/best_face_parse_enc.pt`
-
-Audio video analysis:
-
-`python inference_scripts/inference_video.py --video_path assets/fake/2SaSnpFB4Js_0_1--oeyLwy8sJhA_2_1.mp4 --checkpoint_path model_checkpoints/best_av_enc.pt`
-
-rPPG analysis:
-
-`python inference_scripts/inference_video.py --video_path assets/fake/2SaSnpFB4Js_0_1--oeyLwy8sJhA_2_1.mp4 --checkpoint_path model_checkpoints/best_correct_rPPG.pt`
 
 Only identities tracked for at least 10 frames are analyzed. For each of them, a cropped face thumbnail is saved to `results/{video_name}/identities/{identity}.png`, so you can tell which detected identity each score belongs to.
 
