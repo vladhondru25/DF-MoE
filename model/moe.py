@@ -283,17 +283,7 @@ class SequenceDecoder(nn.Module):
         return x
 
 class MultimodalMoEDetector(nn.Module):
-    def __init__(self, input_dim, output_dim, seq_len=100, hidden_dim = 256):
-        super().__init__()
-        self.seq_len = seq_len
-        self.gru = nn.GRU(input_size=input_dim, hidden_size=hidden_dim, num_layers=1, batch_first=True)
-        self.head = nn.Linear(hidden_dim, output_dim)
 
-    def forward(self, x):
-        x = x.unsqueeze(1).repeat(1, self.seq_len, 1)
-        x, _ = self.gru(x)
-        x = self.head(x)
-        return x
 
     def __init__(self, embed_dim=EMBED_DIM, num_experts=NUM_EXPERTS, k=TOP_K, device='cuda'):
         super().__init__()
