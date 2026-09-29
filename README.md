@@ -68,10 +68,6 @@ Only identities tracked for at least 10 frames are analyzed. For each of them, a
 
 The analysis results are exported to a structured JSON format and organized by video name.
 
-
-Each run generates a file using the following naming convention and directory structure: ```results/{video_name}/result_{model_type}.json```, where `model_type` is one of `moe`, `head_pose_gaze`, `face_segmaps`, `emotion`, `audio_video_transformer`, `rPPG` (again, based on the checkpoint used).
-
-
 The output provides a granular breakdown of "fakeness" scores, structured as follows:
 
 - Sequence Level: A fakeness score is assigned to every individual video sequence processed during the analysis.
