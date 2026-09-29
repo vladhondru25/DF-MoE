@@ -54,6 +54,7 @@ pip install -r requirements.txt
 All checkpoints are available at: https://huggingface.co/acroitoru/DF-MoE/
 
 Paper experiments: best_moe_multiple_datasets_cro_loss.pt
+
 Social media experiments: The remaining checkpoints at the link above come from additional experiments on social media videos. These were completed after the submission deadline and fall outside the scope of the paper, so they are not reported in the article. We recommend them for social media deepfake detection, though this setting proved more challenging than the academic benchmarks.
 ## How to run detection on single video
 `python inference_scripts/inference_video.py --video_path path/to/video.mp4 --checkpoint_path path/to/checkpoint`
